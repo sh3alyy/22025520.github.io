@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>WorldXplore</title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <style>
+    nav {
+      background-color: #93a9d4;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+    }
+
+    nav li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    #bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-height: 100%;
+      min-width: 100%;
+      z-index: -1;
+    }
+
+    video {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    #bg-image {
+      display: none;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-height: 100%;
+      min-width: 100%;
+      z-index: -1;
+    }
+
+    @media screen and (max-width: 768px) {
+  .section {
+    flex-basis: calc(100% - 20px);
+  }
+
+  #bg-image {
+    display: block;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #93a9d4;
+    z-index: 1000;
+  }
+
+  nav li {
+    display: inline;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px;
+    background-color: #446688;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background-color: #344466;
+  }
+
+  /* Add margin-bottom to create space between navigation items */
+  nav li + li {
+    margin-top: 10px;
+  }
+}
+
+
+    nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #93a9d4;
+      color: white;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo:hover {
+      transform: rotate(45deg);
+    }
+
+    .main-menu {
+      flex: 1;
+    }
+
+    .sections-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      flex: 1;
+      padding: 20px;
+      background-color: #d9cfcf96;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+
+    .dropdown-parent {
+  position: relative; /* Add this line */
+  display: inline;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #93a9d4;
+  border: 1px solid #ccc;
+  padding: 10px;
+  list-style: none;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .dropdown a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .dropdown-parent:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown-parent a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+
+    footer {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title">Welcome to WorldXplore</h1>
+    <div class="logo">
+      <svg width="100" height="100">
+        <image href="logo.svg" width="100" height="100" />
+      </svg>
+    </div>
+  </header>
+  <nav class="main-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li class="dropdown-parent">
+        <a href="#">Package Tours</a>
+        <ul class="dropdown">
+          <li class="dropdown-item">
+            <a href="jeju.html">Jeju Island Life</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="japan.html">Cherry Blossom Japan</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="phuket.html">Phuket Delights</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="rediscover.html">Rediscover Singapore</a></li>
+      <li><a href="#">Cruises</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="sections-container">
+    <div class="section">
+      <h2>Jeju Island</h2>
+      <img src="jeju.jpeg" alt="jeju" width="300" height="250">
+      <p> </p>
+      <article>
+        <h3>Article 1: Travel Tips</h3>
+        <p>Get the best travel tips and tricks to make your journeys hassle-free and unforgettable.</p>
+      </article>
+    </div>
+
+    <div class="section">
+      <h2>Japan</h2>
+      <img src="japan.jpeg" alt="jeju" width="300" height="250">
+      <p> </p>
+      <article>
+        <h3>Article 2: Destination Guides</h3>
+        <p>Explore our in-depth destination guides, including hidden gems and must-visit places around the world.</p>
+      </article>
+    </div>
+
+    <div class="section">
+      <h2>Phuket</h2>
+      <img src="phuket.jpeg" alt="jeju" width="300" height="250">
+      <p> </p>
+      <article>
+        <h3>Article 3: Adventure Stories</h3>
+        <p>Read inspiring adventure stories from fellow travelers and get inspired for your next journey.</p>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 WorldXplore. All rights reserved.
+  </footer>
+
+  <video width="100%" height="100%" autoplay loop muted id="bg">
+    <source src="video.mp4" type="video/mp4">
+   
+  </video>
+
+  <img src="bgimg.jpg" alt="background-image" id="bg-image">
+
+</body>
+
+</html>
