@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorldXplore</title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <style>
+    nav {
+      background-color: #93a9d4;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+    }
+
+    nav li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    #bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-height: 100%;
+      min-width: 100%;
+      z-index: -1;
+    }
+
+    video {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #93a9d4;
+      color: white;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo:hover {
+      transform: rotate(45deg);
+    }
+
+    .main-menu {
+      flex: 1;
+    }
+
+    #bg-image {
+      display: none;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-height: 100%;
+      min-width: 100%;
+      z-index: -1;
+    }
+    .section-content img {
+      width: 100%; /* Set initial width to 100% for smaller screens */
+      margin-bottom: 10px;
+      transition: transform 0.3s; /* Add smooth transition for hover effect */
+    }
+
+    @media screen and (min-width: 769px) {
+      .section-content img {
+        width: 48%; /* Set initial width to 48% for normal screens */
+      }
+
+      .section-content img:hover {
+        transform: scale(1.1); /* Increase size on hover for normal screens */
+      }
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .section {
+        flex-basis: calc(100% - 20px);
+      }
+
+      #bg-image {
+        display: block;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav li {
+        display: inline;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+
+      nav a {
+        display: block;
+        padding: 10px;
+        background-color: #446688;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background-color: #344466;
+      }
+
+      nav li+li {
+        margin-top: 10px;
+      }
+    }
+
+    .main-menu {
+      flex: 1;
+    }
+
+    .sections-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      flex: 1;
+      padding: 20px;
+      background-color: #d9cfcf96;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .section-content img {
+      width: 100%; /* Set initial width to 100% for smaller screens */
+      margin-bottom: 10px;
+      transition: transform 0.3s; /* Add smooth transition for hover effect */
+    }
+
+    @media screen and (min-width: 769px) {
+      .section-content img {
+        width: 30%; /* Set initial width to 30% for normal screens */
+      }
+
+      .section-content img:hover {
+        transform: scale(1.1); /* Increase size on hover for normal screens */
+      }
+    }
+    .dropdown-parent {
+      position: relative;
+      display: inline;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #93a9d4;
+      border: 1px solid #ccc;
+      padding: 10px;
+      list-style: none;
+      top: 100%;
+      left: 0;
+      width: 200px;
+      max-height: 150px;
+      overflow-y: auto;
+      z-index: 1;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .dropdown-parent:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown-parent a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+
+    footer {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title">Welcome to WorldXplore</h1>
+    <div class="logo">
+      <svg width="100" height="100">
+        <image href="logo.svg" width="100" height="100" />
+      </svg>
+    </div>
+  </header>
+  <nav class="main-menu">
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li class="dropdown-parent">
+        <a href="#">Package Tours</a>
+        <ul class="dropdown">
+          <li class="dropdown-item">
+            <a href="jeju.html">Jeju Island Life</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="japan.html">Cherry Blossom Japan</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="phuket.html">Phuket Delights</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="rediscover.html">Rediscover Singapore</a></li>
+      <li><a href="#">Cruises</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="sections-container">
+    <!-- Section 1 -->
+    <div class="section">
+      <h2>Cherry Blossom Japan</h2>
+      <div class="section-content">
+        <img src="japan1.jpeg" alt="japan">
+        <img src="Sakura.jpeg" alt="japan">
+        <img src="tokyo.jpeg" alt="japan">
+        <img src="garden.jpeg" alt="japan">
+        <img src="shibuya.jpeg" alt="japan">
+        <img src="japanfood.jpeg" alt="japan">
+        <article>
+          <h3>Day 1: Arrival in Kyoto</h3>
+          <ul>
+            <li>Morning: Arrive at Narita International Airport or Haneda International Airport.</li>
+            <li>Transfer to your hotel in Tokyo.</li>
+            <li>Afternoon: Explore Ueno Park, which is known for its cherry blossoms. Visit the Tokyo National Museum if time allows.</li>
+            <li>Evening: Enjoy dinner at a local restaurant.</li>
+          </ul>
+
+          <h3>Day 2: Cherry Blossom Viewing in Tokyo</h3>
+          <ul>
+            <li>Morning: Visit Shinjuku Gyoen, a vast park with various types of cherry blossoms.</li>
+            <li>Lunch: Try Japanese street food or dine at a nearby restaurant.</li>
+            <li>Afternoon: Stroll around Chidorigafuchi, where you can rent a rowboat to view cherry blossoms along the moat of the Imperial Palace.</li>
+            <li>Evening: Explore the bustling Shibuya district.</li>
+          </ul>
+
+          <h3>Day 3: Travel to Kyoto</h3>
+          <ul>
+            <li>Morning: Take the shinkansen (bullet train) to Kyoto.</li>
+            <li>Afternoon: Visit Maruyama Park, a popular cherry blossom spot in Kyoto.</li>
+            <li>Evening: Enjoy a traditional Kyoto-style kaiseki dinner at a local ryokan (traditional Japanese inn).</li>
+          </ul>
+
+          <h3>Day 4: Kyoto Cherry Blossom Viewing</h3>
+          <ul>
+            <li>Morning: Explore the beautiful Arashiyama Bamboo Grove and visit Tenryu-ji Temple.</li>
+            <li>Lunch: Savor yudofu (tofu hot pot) in Arashiyama.</li>
+            <li>Afternoon: Visit the stunning cherry blossom trees at the Heian Shrine.</li>
+            <li>Evening: Explore the Gion district in the hopes of spotting geisha and maiko.</li>
+          </ul>
+
+          <h3>Day 5: Kyoto's Cherry Blossoms and Departure</h3>
+          <ul>
+            <li>Morning: Visit Philosopher's Path and its cherry blossoms.</li>
+            <li>Lunch: Enjoy a traditional bento box or a meal at a local restaurant.</li>
+            <li>Afternoon: Explore Kiyomizu-dera and its beautiful cherry blossom views.</li>
+            <li>Evening: Transfer to Kansai International Airport or Osaka International Airport for your departure.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    &copy; 2023 WorldXplore. All rights reserved.
+  </footer>
+
+  <video width="100%" height="100%" autoplay loop muted id="bg">
+    <source src="video.mp4">
+  </video>
+  <img src="bgimg.jpg" alt="background-image" id="bg-image">
+</body>
+
+</html>
