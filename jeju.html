@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorldXplore</title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <style>
+    nav {
+      background-color: #93a9d4;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+    }
+
+    nav li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    #bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-height: 100%;
+      min-width: 100%;
+      z-index: -1;
+    }
+
+    video {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #93a9d4;
+      color: white;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo:hover {
+      transform: rotate(45deg);
+    }
+
+    .main-menu {
+      flex: 1;
+    }
+
+    #bg-image {
+      display: none;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-height: 100%;
+      min-width: 100%;
+      z-index: -1;
+    }
+    .section-content img {
+      width: 100%; /* Set initial width to 100% for smaller screens */
+      margin-bottom: 10px;
+      transition: transform 0.3s; /* Add smooth transition for hover effect */
+    }
+
+    @media screen and (min-width: 769px) {
+      .section-content img {
+        width: 48%; /* Set initial width to 48% for normal screens */
+      }
+
+      .section-content img:hover {
+        transform: scale(1.1); /* Increase size on hover for normal screens */
+      }
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .section {
+        flex-basis: calc(100% - 20px);
+      }
+
+      #bg-image {
+        display: block;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav li {
+        display: inline;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+
+      nav a {
+        display: block;
+        padding: 10px;
+        background-color: #446688;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background-color: #344466;
+      }
+
+      nav li+li {
+        margin-top: 10px;
+      }
+    }
+
+    .main-menu {
+      flex: 1;
+    }
+
+    .sections-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      flex: 1;
+      padding: 20px;
+      background-color: #d9cfcf96;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .section-content img {
+      width: 100%; /* Set initial width to 100% for smaller screens */
+      margin-bottom: 10px;
+      transition: transform 0.3s; /* Add smooth transition for hover effect */
+    }
+
+    @media screen and (min-width: 769px) {
+      .section-content img {
+        width: 30%; /* Set initial width to 30% for normal screens */
+      }
+
+      .section-content img:hover {
+        transform: scale(1.1); /* Increase size on hover for normal screens */
+      }
+    }
+    .dropdown-parent {
+      position: relative;
+      display: inline;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #93a9d4;
+      border: 1px solid #ccc;
+      padding: 10px;
+      list-style: none;
+      top: 100%;
+      left: 0;
+      width: 200px;
+      max-height: 150px;
+      overflow-y: auto;
+      z-index: 1;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .dropdown-parent:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown-parent a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+
+    footer {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title">Welcome to WorldXplore</h1>
+    <div class="logo">
+      <svg width="100" height="100">
+        <image href="logo.svg" width="100" height="100" />
+      </svg>
+    </div>
+  </header>
+  <nav class="main-menu">
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li class="dropdown-parent">
+        <a href="#">Package Tours</a>
+        <ul class="dropdown">
+          <li class="dropdown-item">
+            <a href="jeju.html">Jeju Island Life</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="japan.html">Cherry Blossom Japan</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="phuket.html">Phuket Delights</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="rediscover.html">Rediscover Singapore</a></li>
+      <li><a href="#">Cruises</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections container -->
+  <div class="sections-container">
+    <!-- Section 1 -->
+    <div class="section">
+      <h2>Jeju Island Life</h2>
+      <div class="section-content">
+        <img src="Jeju Island.jpeg" alt="jeju">
+        <img src="jejufood.jpeg" alt="jeju">
+        <img src="jejufolk.jpeg" alt="jeju">
+        <img src="jejucave.jpeg" alt="jeju">
+        <img src="jejusun.jpeg" alt="jeju">
+        <img src="jejupark.jpeg" alt="jeju">
+        <article>
+          <h3>DAY 1: Arrival in Jeju</h3>
+          <ul>
+            <li>Morning: Arrive at Jeju International Airport.</li>
+            <li>Transfer to your hotel or accommodation.</li>
+            <li>Afternoon: Explore Jeju's beautiful beaches. Visit the famous Hyeopjae Beach for some relaxation and water sports activities.</li>
+            <li>Evening: Enjoy a welcome dinner at a local restaurant featuring Jeju's fresh seafood.</li>
+          </ul>
+
+          <h3>DAY 2: Jeju Sightseeing</h3>
+          <ul>
+            <li>Morning: Visit the Seongsan Ilchulbong Sunrise Peak, a UNESCO World Heritage site known for its breathtaking views and unique crater. You can hike to the summit.</li>
+            <li>Lunch: Enjoy local cuisine at a nearby restaurant.</li>
+            <li>Afternoon: Explore Manjanggul Cave, one of the largest lava tubes in the world.</li>
+            <li>Evening: Stroll through the charming Seogwipo Olle Market for local street food and shopping.</li>
+          </ul>
+
+          <h3>DAY 3: Cultural Experiences and Departure</h3>
+          <ul>
+            <li>Morning: Visit the Jeju Folk Village to learn about the island's traditional culture and history.</li>
+            <li>Lunch: Enjoy a traditional Korean meal.</li>
+            <li>Afternoon: Explore Hallasan National Park, home to South Korea's highest peak, Mount Halla. Depending on your group's fitness level, you can choose a trail suitable for your needs.</li>
+            <li>Evening: Transfer to Jeju International Airport for your departure.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 WorldXplore. All rights reserved.
+  </footer>
+
+  <video width="100%" height="100%" autoplay loop muted id="bg">
+    <source src="video.mp4">
+  </video>
+  <img src="bgimg.jpg" alt="background-image" id="bg-image">
+</body>
+
+</html>
